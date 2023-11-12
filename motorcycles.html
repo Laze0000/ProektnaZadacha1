@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Proektna zadacha 1</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <style>
+            .block{
+                width:15%;
+            }
+            .container{
+                padding: 3%;
+            }
+            .block1{
+                background-image: url('yamaha.jpg');
+            }
+            
+        </style>
+        <script>
+            window.onload = function() {
+                 update();
+}           ;
+            function update(){
+
+                function changeOptions(model, value) {
+                    var option = document.createElement("option");
+                    option.text=value;
+                    model.add(option);
+                }
+
+                var brand=document.getElementById("brand");
+                var model=document.getElementById("model");
+                var selected=brand.value;
+                var selectedM=model.value;
+
+                var slika=document.getElementById("slika");
+
+                model.innerHTML = "";
+                
+                if(selected=="Yamaha"){
+                    changeOptions(model, "R1");
+                    changeOptions(model, "MT-09");
+                    changeOptions(model, "Tenere");
+
+                    if(selectedM="R1"){slika.src="R1.jpg";}
+                    else if(selectedM="MT-09"){slika.src="mt09.jpg";}
+                    else if(selectedM="Tenere"){slika.src="tenere.jpg";}
+                }
+                else if(selected=="Kawasaki"){
+                    changeOptions(model, "Z900");
+                    changeOptions(model, "Ninja 400");
+
+                    if(selectedM="Z900"){slika.src="z900.jpg";}
+                    else if(selectedM="Ninja 400"){slika.src="ninja400.jpg";}
+
+                }
+                else if(selected=="Honda"){
+                    changeOptions(model, "CB500F");
+                    changeOptions(model, "Goldwing");
+
+                    if(selectedM="CB500F"){slika.src="cb500.jpg";}
+                    else if(selectedM="Goldwing"){slika.src="goldwing.jpg";}
+                }
+            }
+        </script>
+    </head>
+    <body>
+            <div class="header">
+        <h1>Motorcycle shop</h1>
+        <p>Buy brand new motorcylces, gear and parts all online!</p>
+        <a href="homepage.html"><button class="back" type="submit">Back to homepage</button></a>
+        </div>
+
+        <div class="top">
+        <h1>Order your new motorcycle here!</h1>
+        <p>This site links to reviews of the motocycles we offer for sale.<br>
+            Though the form below, you can order the motorcycle to be delivered from the factory!<br>
+            Choose from one of the three brands to see information about the aviable motorcycles.
+        </p>
+        </div>
+
+        <div class="container">
+            <a href="https://global.yamaha-motor.com/business/mc/">
+            <div class="block" id="block1" style="background-image: url('yamaha.jpg'); background-size: cover;">
+            <h1 style="color: blue">Yamaha</h1>
+            </div>
+            </a>
+            
+            <a href="https://www.kawasaki.com/en-us/">
+            <div class="block" id="block2" style="background-image: url('kawasaki.jpg'); background-size: cover;">
+            <h1 style="color:green">Kawasaki</h1>
+            </div>
+            </a>
+    
+            <a href="https://powersports.honda.com/">
+            <div class="block" id="block3" style="background-image: url('honda.png'); background-size: cover;">
+            <h1 style="color: red;">Honda</h1>
+            </div>
+            </a>
+        </div>
+
+
+
+        <table width="50%" border="1" align="center" style="background-color:white">
+            <tr>
+                <th align="center" colspan="2">Order your motorcycle here!</th>
+            </tr>
+            <tr>
+                <td>Brand:</td>
+                <td><select name="brand" id="brand" onchange="update()" onload="update()">
+                    <option>Yamaha</option>
+                    <option>Kawasaki</option>
+                    <option>Honda</option></select>
+                </td>
+            </tr>
+            <tr>
+                <td>Model:</td>
+                <td><select name="model" id="model" oncahnge="update()"></select></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" aling="center">
+                    <input type="submit" value="Send my order" align="center">
+                </td>
+            </tr>
+
+        </table>
+
+        <img id="slika" src="" style="display:block; margin-left: auto; margin-right: auto; margin-top: 3%;">
+
+        <div class="footer">
+            <p>
+                <a href="mailto: lazar.vanchov@gmail.com">lazar.vanchov@gmail.com</a>
+            </p>
+        </div>
+    </body>
+</html>

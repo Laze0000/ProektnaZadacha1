@@ -2,41 +2,64 @@
 
 <html>
     <head>
-        <title>Proektna zadacha broj 1</title>
+        <title>Proektna zadacha 1</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <style>
-            body {
-                background-image: url('backround.jpg');
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: cover;
-            }
-
-            .header {
-                text-align: center;
-                font-size:larger;
-            }
-            .footer{
-                position: fixed;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-            }
+            .title{display: inline;
+            text-align: center;}
+            .login{display: inline;
+            text-align: left;}
         </style>
     </head>
     <body>
         <div class="header">
+            <div class="title">
         <h1>Motorcycle shop</h1>
         <p>Buy brand new motorcylces, gear and parts all online!</p>
+    </div>
+        <form action="">
+            <div class="login">
+                <label for="username">Username:</label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+                <br><br>
+                <label for="pswrd">Password:</label>
+                <input type="password" placeholder="Enter Password" name="pswrd" required>
+    
+                <br>
+                 <button type="submit">Login</button>
+            </div>
+        </form>
         </div>
 
         <div class="footer">
             <p>
-                Contact Information: lazar.vanchov@gmail.com
-                
-
+                <a href="mailto: lazar.vanchov@gmail.com">lazar.vanchov@gmail.com</a>
             </p>
         </div>
+        <div class="container">
+            <a href="motorcycles.html">
+            <div class="block" id="block1">
+            <h1>Motorcycle shop!</h1>
+            <p>Buy new and used motorcycles at our shop!</p>
+            </div>
+            </a>
+            
+            <a href="gear.html">
+            <div class="block" id="block2">
+            <h1>Moto-Gear</h1>
+            <p>Buy gear for riding in all seasons!</p>
+            </div>
+            </a>
+    
+            <a href="accessories.html">
+            <div class="block" id="block3">
+            <h1>Accesories</h1>
+            <p>Accesories and parts for you motorcycle!</p>
+            </div>
+            </a>
+        </div>
+
+
     </body>
 </html>
