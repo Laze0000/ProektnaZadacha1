@@ -17,7 +17,7 @@
             }
             
         </style>
-        <script>
+        <script type="text/javascript">
             window.onload = function() {
                  update();
 }           ;
@@ -27,6 +27,7 @@
                     var option = document.createElement("option");
                     option.text=value;
                     model.add(option);
+                    
                 }
 
                 var brand=document.getElementById("brand");
@@ -43,24 +44,24 @@
                     changeOptions(model, "MT-09");
                     changeOptions(model, "Tenere");
 
-                    if(selectedM="R1"){slika.src="R1.jpg";}
-                    else if(selectedM="MT-09"){slika.src="mt09.jpg";}
-                    else if(selectedM="Tenere"){slika.src="tenere.jpg";}
+                    if(selectedM==="R1"){slika.src="R1.jpg";}
+                    else if(selectedM==="MT-09"){slika.src="mt09.jpg";}
+                    else if(selectedM==="Tenere"){slika.src="tenere.jpg";}
                 }
                 else if(selected=="Kawasaki"){
                     changeOptions(model, "Z900");
                     changeOptions(model, "Ninja 400");
 
-                    if(selectedM="Z900"){slika.src="z900.jpg";}
-                    else if(selectedM="Ninja 400"){slika.src="ninja400.jpg";}
+                    if(selectedM=="Z900"){slika.src="z900.jpg";}
+                    else if(selectedM=="Ninja 400"){slika.src="ninja400.jpg";}
 
                 }
                 else if(selected=="Honda"){
                     changeOptions(model, "CB500F");
                     changeOptions(model, "Goldwing");
 
-                    if(selectedM="CB500F"){slika.src="cb500.jpg";}
-                    else if(selectedM="Goldwing"){slika.src="goldwing.jpg";}
+                    if(selectedM=="CB500F"){slika.src="cb500.jpg";}
+                    else if(selectedM=="Goldwing"){slika.src="goldwing.jpg";}
                 }
             }
         </script>
