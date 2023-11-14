@@ -6,6 +6,18 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <style>
+            img{
+                max-width: 60%;
+                max-height: 60%;
+                border: 5px solid #555;
+            }
+            .container {
+                display: grid;
+                align-items: center; 
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 5px;
+                margin: auto;
+}
         </style>
     </head>
     <body>
@@ -15,7 +27,84 @@
         <a href="homepage.html"><button class="back" type="submit">Back to homepage</button></a>
         </div>
 
-        
+        <div class="top">
+            <h1>Buy new motorcycle riding gear for all seasons!</h1>
+            <p>Here you can oreder from our shop list all sorts of gear.<br>
+                Ranging from a variety of helmets, all weather jackets, pants and gloves for all seaons.<br>
+                Though the form below, you can order any of the mentioned above to be delivered.<br>
+                Choose from one of the three categories to see more information.
+            </p>
+            </div>
+    <div class="container">
+        <div class="image">
+            <img id="helmet" src="helmet.webp">
+        </div>
+    <div class="text">
+        <h2>Comftrable helmet for adquent protection with the latest certification.</h2>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="image">
+            <img id="gloves" src="gloves.jpg">
+        </div>
+    <div class="text">
+        <h2>Gloves that warm and protect the hand.</h2>
+    </div>
+    </div>
+    <div class="container">
+        <div class="image">
+            <img id="jacket" src="jacket.jpg">
+        </div> 
+        <div class = "text">
+            <h2>Jacket that looks great, feels great and offers protection.<br> Keep you warm and dry during the weather</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image">
+            <img id="pants" src="pants.jpg">
+        </div>
+    <div>
+        <h2>Waterproof and windproof pants for motorcycle riding! All-season, look great in them.</h2>
+    </div>
+    </div>
+
+    <table width="50%" border="1" align="center" style="background-color:white; margin-bottom: 10%;">
+        <tr>
+            <th align="center" colspan="2">Order your gear here!</th>
+        </tr>
+        <tr>
+            <td>Gear to order:</td>
+            <td><select>
+                <option>Helmet</option>
+                <option>Gloves</option>
+                <option>Jacket</option>
+                <option>Pants</option></select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Size: </td>
+            <td>
+                <input type="radio" name="size">
+                <label>S</label><br>
+                <input type="radio" name="size">
+                <label>M</label><br>
+                <input type="radio" name="size">
+                <label>X</label>
+                <input type="radio" name="size">
+                <label>XL</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" aling="center">
+                <input type="submit" value="Send my order" align="center">
+            </td>
+        </tr>
+
+    </table>
 
         <div class="footer">
             <p>

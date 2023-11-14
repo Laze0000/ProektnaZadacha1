@@ -18,52 +18,73 @@
             
         </style>
         <script type="text/javascript">
-            window.onload = function() {
-                 update();
-}           ;
-            function update(){
+window.onload = function() {
+    document.getElementById("brand").addEventListener("change", updateBrand);
+    document.getElementById("model").addEventListener("change", function() {
+        updateImage(this.value);
+    });
 
-                function changeOptions(model, value) {
-                    var option = document.createElement("option");
-                    option.text=value;
-                    model.add(option);
-                    
-                }
+    updateBrand();
+};
 
-                var brand=document.getElementById("brand");
-                var model=document.getElementById("model");
-                var selected=brand.value;
-                var selectedM=model.value;
+function updateBrand() {
+    var brand = document.getElementById("brand");
+    var model = document.getElementById("model");
+    var selectedBrand = brand.value;
 
-                var slika=document.getElementById("slika");
+    model.innerHTML = "";
 
-                model.innerHTML = "";
-                
-                if(selected=="Yamaha"){
-                    changeOptions(model, "R1");
-                    changeOptions(model, "MT-09");
-                    changeOptions(model, "Tenere");
+    if (selectedBrand == "Yamaha") {
+        addModel(model, "R1");
+        addModel(model, "MT-09");
+        addModel(model, "Tenere");
+    } else if (selectedBrand == "Kawasaki") {
+        addModel(model, "Z900");
+        addModel(model, "Ninja 400");
+    } else if (selectedBrand == "Honda") {
+        addModel(model, "CB500F");
+        addModel(model, "Goldwing");
+    }
 
-                    if(selectedM==="R1"){slika.src="R1.jpg";}
-                    else if(selectedM==="MT-09"){slika.src="mt09.jpg";}
-                    else if(selectedM==="Tenere"){slika.src="tenere.jpg";}
-                }
-                else if(selected=="Kawasaki"){
-                    changeOptions(model, "Z900");
-                    changeOptions(model, "Ninja 400");
+    model.dispatchEvent(new Event('change'));
+}
 
-                    if(selectedM=="Z900"){slika.src="z900.jpg";}
-                    else if(selectedM=="Ninja 400"){slika.src="ninja400.jpg";}
+function addModel(model, value) {
+    var option = document.createElement("option");
+    option.text = value;
+    model.add(option);
+}
 
-                }
-                else if(selected=="Honda"){
-                    changeOptions(model, "CB500F");
-                    changeOptions(model, "Goldwing");
+function updateImage(modelName) {
+    var slika = document.getElementById("slika");
+    switch (modelName) {
+        case "R1":
+            slika.src = "R1.jpg";
+            break;
+        case "MT-09":
+            slika.src = "mt09.jpg";
+            break;
+        case "Tenere":
+            slika.src = "tenere.jpg";
+            break;
+        case "Z900":
+            slika.src = "z900.jpg";
+            break;
+        case "Ninja 400":
+            slika.src = "ninja400.jpg";
+            break;
+        case "CB500F":
+            slika.src = "cb500.jpg";
+            break;
+        case "Goldwing":
+            slika.src = "goldwing.jpg";
+            break;
+        default:
+            slika.src = "";
+            break;
+    }
+}
 
-                    if(selectedM=="CB500F"){slika.src="cb500.jpg";}
-                    else if(selectedM=="Goldwing"){slika.src="goldwing.jpg";}
-                }
-            }
         </script>
     </head>
     <body>
@@ -117,7 +138,7 @@
             </tr>
             <tr>
                 <td>Model:</td>
-                <td><select name="model" id="model" oncahnge="update()"></select></td>
+                <td><select name="model" id="model" onchange="update()"></select></td>
             </tr>
 
             <tr>
@@ -128,7 +149,7 @@
 
         </table>
 
-        <img id="slika" src="" style="display:block; margin-left: auto; margin-right: auto; margin-top: 3%;">
+        <img id="slika" src="" style="display:block; margin-left: auto; margin-right: auto; margin-top: 3%; width: 50%; height: 50%; border: 5px solid rgb(28, 42, 42);">
 
         <div class="footer">
             <p>
