@@ -10,7 +10,8 @@
                 width:15%;
             }
             .container{
-                padding: 3%;
+                padding-bottom: 3%;
+                margin-bottom: 3%;
             }
             .block1{
                 background-image: url('yamaha.jpg');
@@ -84,7 +85,27 @@ function updateImage(modelName) {
             break;
     }
 }
+            document.addEventListener('DOMContentLoaded', function() {
+            const likeButton = document.getElementById('like');
+            const likeCountElement = document.getElementById('likes');
+            let likeCount = 0;
 
+            likeButton.addEventListener('click', () => {
+            likeCount++;
+            likeCountElement.innerText = likeCount;});
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('post').addEventListener('click', function() {
+                var commentInput = document.getElementById('comment');
+                var newComment = commentInput.value;
+                if (newComment) {
+                    var li = document.createElement('li');
+                    li.textContent = newComment;
+                    document.getElementById('comments').appendChild(li);
+                    commentInput.value = '';
+                }
+            });
+        });
         </script>
     </head>
     <body>
@@ -163,8 +184,17 @@ function updateImage(modelName) {
             </tr>
 
         </table>
-
+        <div class="container">
         <img id="slika" src="" style="display:block; margin-left: auto; margin-right: auto; margin-top: 3%; width: 50%; height: 50%; border: 5px solid rgb(28, 42, 42);">
+            <button id="like">Like</button>
+            <span id="likes">0</span> likes<br>
+            <div class="comment-section">
+                <h3>Comments</h3>
+                <ul class="comments"></ul>
+                <input type="text" id="comment" placeholder="Type your comment here">
+                <button id="post">Post Comment</button>
+            </div>
+        </div>
 
         <div class="footer">
             <p>

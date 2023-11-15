@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Proektna zadacha 1</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <style>
+            img{
+                max-width: 60%;
+                max-height: 60%;
+                border: 5px solid #555;
+            }
+            .container {
+                display: grid;
+                align-items: center; 
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 5px;
+                margin: auto;
+}
+        </style>
+        <script type="text/javascript" language="JavaScript">
+        </script>
+    </head>
+    <body>
+            <div class="header">
+        <h1>Motorcycle shop</h1>
+        <p>Buy brand new motorcylces, gear and parts all online!</p>
+        <a href="homepage.html"><button class="back" type="submit">Back to homepage</button></a>
+        </div>
+
+        <div class="top">
+            <h1>Product Survey</h1>
+            <p>
+                Submit your opionion about a product!
+            </p>
+            </div>
+
+            <table width="60%" border="3" align="center" style="background-color:white">
+                <tr>
+                    <th align="center" colspan="2">Survey</th>
+                </tr>
+                
+                <tr>
+                    <td>What product would you like to rate?</td>
+                    <td><select name="brand" id="brand" onchange="update()" onload="update()">
+                        <option>Motorcycles</option>
+                        <option>Gear</option>
+                        <option>Accesories</option></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rate your satisfaction of the product: </td>
+                    <td><input type="range" min="1" max="10" value="1" class="slider" id="myRange"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">Additional comment:<br>
+                        <textarea style="width: 99%">
+    
+                        </textarea>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td colspan="2" aling="center">
+                        <input type="submit" value="Submit" align="center">
+                    </td>
+                </tr>
+            </table>
+
+            <div class="top">
+                <h1>Website Survey</h1>
+                <p>
+                    Submit your experience with the website.
+                </p>
+                </div>
+    
+                <table width="60%" border="3" align="center" style="background-color:white">
+                    <tr>
+                        <th align="center" colspan="2">Survey</th>
+                    </tr>
+                    
+                    <tr>
+                        <td>Rate your satisfaction with the website: </td>
+                        <td><input type="range" min="1" max="10" value="1" class="slider" id="myRange"></td>
+                    </tr>
+    
+                    <tr>
+                        <td colspan="2">Additional comment:<br>
+                            <textarea style="width: 99%">
+        
+                            </textarea>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td colspan="2" aling="center">
+                            <input type="submit" value="Submit" align="center">
+                        </td>
+                    </tr>
+                </table>
+
+        <div class="footer">
+            <p>
+                <a href="mailto: lazar.vanchov@gmail.com">lazar.vanchov@gmail.com</a>
+            </p>
+        </div>
+    </body>
+</html>

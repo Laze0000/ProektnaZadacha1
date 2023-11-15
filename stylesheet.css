@@ -29,7 +29,8 @@
     position: relative;
 }
 
-.container{text-align: center;}
+.container{text-align: center;
+padding: 3%;}
 
 .block{display: inline-block;
 width: 30%;
@@ -63,4 +64,12 @@ transition: 1.5s;
   .header button{
     background-color: aliceblue;
     color: black;
+  }
+
+  .container button{
+    font-size: larger;
+  }
+
+  p{
+    font-size: larger;
   }

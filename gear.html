@@ -19,6 +19,32 @@
                 margin: auto;
 }
         </style>
+        <script type="text/javascript" language="JavaScript">
+            document.addEventListener('DOMContentLoaded', function() {
+            const likeButton = document.getElementById('like');
+            const likeCountElement = document.getElementById('likes');
+            let likeCount = 0;
+
+            likeButton.addEventListener('click', () => {
+            likeCount++;
+            likeCountElement.innerText = likeCount;});
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.post-comment').forEach(function(button) {
+            button.addEventListener('click', function() {
+            var commentSection = button.closest('.comment-section');
+            var commentInput = commentSection.querySelector('.input');
+            var newComment = commentInput.value;
+            if (newComment) {
+                var li = document.createElement('li');
+                li.textContent = newComment;
+                commentSection.querySelector('.comments').appendChild(li);
+                commentInput.value = '';
+            }
+        });
+    });
+});
+        </script>
     </head>
     <body>
             <div class="header">
@@ -38,6 +64,14 @@
     <div class="container">
         <div class="image">
             <img id="helmet" src="helmet.webp">
+            <button id="like">Like</button>
+            <span id="likes">0</span> likes<br>
+            <div class="comment-section">
+                <h3>Comments:</h3>
+                <ul class="comments"></ul>
+                <input type="text" class="input" placeholder="Type your comment here">
+                <button class="post-comment">Post Comment</button>
+            </div>
         </div>
     <div class="text">
         <h2>Comftrable helmet for adquent protection with the latest certification.</h2>
@@ -47,6 +81,14 @@
     <div class="container">
         <div class="image">
             <img id="gloves" src="gloves.jpg">
+            <button id="like">Like</button>
+            <span id="likes">0</span> likes<br>
+            <div class="comment-section">
+                <h3>Comments:</h3>
+                <ul class="comments"></ul>
+                <input type="text" class="input" placeholder="Type your comment here">
+                <button class="post-comment">Post Comment</button>
+            </div>
         </div>
     <div class="text">
         <h2>Gloves that warm and protect the hand.</h2>
@@ -55,6 +97,14 @@
     <div class="container">
         <div class="image">
             <img id="jacket" src="jacket.jpg">
+            <button id="like">Like</button>
+            <span id="likes">0</span> likes<br>
+            <div class="comment-section">
+                <h3>Comments:</h3>
+                <ul class="comments"></ul>
+                <input type="text" class="input" placeholder="Type your comment here">
+                <button class="post-comment">Post Comment</button>
+            </div>
         </div> 
         <div class = "text">
             <h2>Jacket that looks great, feels great and offers protection.<br> Keep you warm and dry during the weather</h2>
@@ -64,6 +114,14 @@
     <div class="container">
         <div class="image">
             <img id="pants" src="pants.jpg">
+            <button id="like">Like</button>
+            <span id="likes">0</span> likes<br>
+            <div class="comment-section">
+                <h3>Comments:</h3>
+                <ul class="comments"></ul>
+                <input type="text" class="input" placeholder="Type your comment here">
+                <button class="post-comment">Post Comment</button>
+            </div>
         </div>
     <div>
         <h2>Waterproof and windproof pants for motorcycle riding! All-season, look great in them.</h2>

@@ -18,19 +18,39 @@
                 grid-template-columns: 1fr 1fr 1fr;
                 column-gap: 5px;
                 margin: auto;
-}
+            }
+            
+            .table{
+                margin-top: 3%;
+                padding-top: 3%;
+            }
         </style>
         <script type="text/javascript" language="JavaScript">
             document.addEventListener('DOMContentLoaded', function() {
-            const likeButton = document.getElementById('like-button');
-            const likeCountElement = document.getElementById('like-count');
+            const likeButton = document.getElementById('like');
+            const likeCountElement = document.getElementById('likes');
             let likeCount = 0;
 
             likeButton.addEventListener('click', () => {
             likeCount++;
-            likeCountElement.innerText = likeCount;
+            likeCountElement.innerText = likeCount;});
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.post-comment').forEach(function(button) {
+            button.addEventListener('click', function() {
+            var commentSection = button.closest('.comment-section');
+            var commentInput = commentSection.querySelector('.input');
+            var newComment = commentInput.value;
+            if (newComment) {
+                var li = document.createElement('li');
+                li.textContent = newComment;
+                commentSection.querySelector('.comments').appendChild(li);
+                commentInput.value = '';
+            }
         });
-  });
+    });
+});
+
         </script>
     </head>
     <body>
@@ -51,6 +71,14 @@
     <div class="container">
         <div class="image">
             <img id="windsheild" src="windsheild.jpg">
+            <button id="like">Like</button>
+            <span id="likes">0</span> likes<br>
+            <div class="comment-section">
+                <h3>Comments:</h3>
+                <ul class="comments"></ul>
+                <input type="text" class="input" placeholder="Type your comment here">
+                <button class="post-comment">Post Comment</button>
+            </div>
         </div>
     <div class="text">
         <h2>Windsheild for a more comftrable ride!</h2>
@@ -60,8 +88,14 @@
     <div class="container">
         <div class="image">
             <img id="heated-grips" src="heated-grips.jpg">
-            <button id="like-button">Like</button>
-            <span id="like-count">0</span> likes
+            <button id="like">Like</button>
+            <span id="likes">0</span> likes<br>
+            <div class="comment-section">
+                <h3>Comments:</h3>
+                <ul class="comments"></ul>
+                <input type="text" class="input" placeholder="Type your comment here">
+                <button class="post-comment">Post Comment</button>
+            </div>
         </div>
     <div class="text">
         <h2>Haeted grips from for a warm ride during cold weather.</h2>
@@ -70,6 +104,14 @@
     <div class="container">
         <div class="image">
             <img id="engine-guard" src="engine-guard.webp">
+            <button id="like">Like</button>
+            <span id="likes">0</span> likes<br>
+            <div class="comment-section">
+                <h3>Comments:</h3>
+                <ul class="comments"></ul>
+                <input type="text" class="input" placeholder="Type your comment here">
+                <button class="post-comment">Post Comment</button>
+            </div>
         </div> 
         <div class = "text">
             <h2>Protect your engine from crashesh and falls.</h2>
@@ -79,6 +121,14 @@
     <div class="container">
         <div class="image">
             <img id="case" src="case.jpg">
+            <button id="like">Like</button>
+            <span id="likes">0</span> likes<br>
+            <div class="comment-section">
+                <h3>Comments:</h3>
+                <ul class="comments"></ul>
+                <input type="text" class="input" placeholder="Type your comment here">
+                <button class="post-comment">Post Comment</button>
+            </div>
         </div>
     <div>
         <h2>Storage case for storing your helmet among with other things.</h2>
