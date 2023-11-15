@@ -6,7 +6,32 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <style>
+            img{
+                max-width: 60%;
+                max-height: 60%;
+                border: 5px solid #555;
+                display: block;
+            }
+            .container {
+                display: grid;
+                align-items: center; 
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 5px;
+                margin: auto;
+}
         </style>
+        <script type="text/javascript" language="JavaScript">
+            document.addEventListener('DOMContentLoaded', function() {
+            const likeButton = document.getElementById('like-button');
+            const likeCountElement = document.getElementById('like-count');
+            let likeCount = 0;
+
+            likeButton.addEventListener('click', () => {
+            likeCount++;
+            likeCountElement.innerText = likeCount;
+        });
+  });
+        </script>
     </head>
     <body>
             <div class="header">
@@ -14,6 +39,99 @@
         <p>Buy brand new motorcylces, gear and parts all online!</p>
         <a href="homepage.html"><button class="back" type="submit">Back to homepage</button></a>
         </div>
+
+        <div class="top">
+            <h1>Buy accessories for your motorcycle here!</h1>
+            <p>Here you can oreder from our shop list all sorts of accessories.<br>
+                Modify your motorcycle for all conditions, from installing a wind sheild to heated grips.<br>
+                Though the form below, you can order any of the mentioned above to be delivered.<br>
+                Choose from one of the categories to see more information.
+            </p>
+            </div>
+    <div class="container">
+        <div class="image">
+            <img id="windsheild" src="windsheild.jpg">
+        </div>
+    <div class="text">
+        <h2>Windsheild for a more comftrable ride!</h2>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="image">
+            <img id="heated-grips" src="heated-grips.jpg">
+            <button id="like-button">Like</button>
+            <span id="like-count">0</span> likes
+        </div>
+    <div class="text">
+        <h2>Haeted grips from for a warm ride during cold weather.</h2>
+    </div>
+    </div>
+    <div class="container">
+        <div class="image">
+            <img id="engine-guard" src="engine-guard.webp">
+        </div> 
+        <div class = "text">
+            <h2>Protect your engine from crashesh and falls.</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image">
+            <img id="case" src="case.jpg">
+        </div>
+    <div>
+        <h2>Storage case for storing your helmet among with other things.</h2>
+    </div>
+    </div>
+
+    <table width="50%" border="1" align="center" style="background-color:white; margin-bottom: 10%;">
+        <tr>
+            <th align="center" colspan="2">Order your accessories here!</th>
+        </tr>
+        
+        <tr>
+            <td>
+                Name:
+            </td>
+            <td>
+                <label> <input name = "name" type="text" style="width: 70%"> </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Phone number:</td>
+            <td>
+                <label> <input name = "name" type="number" style="width: 70%"> </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Order:</td>
+            <td><select>
+                <option>Windsheild</option>
+                <option>Heated Grips</option>
+                <option>Engine guard</option>
+                <option>Aluminium case</option></select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Motorcycle model:
+            </td>
+            <td>
+                <label> <input name = "name" type="text" style="width: 70%"> </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" aling="center">
+                <input type="submit" value="Send my order" align="center">
+            </td>
+        </tr>
+
+    </table>
 
         <div class="footer">
             <p>

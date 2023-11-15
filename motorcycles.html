@@ -17,7 +17,7 @@
             }
             
         </style>
-        <script type="text/javascript">
+        <script type="text/javascript" language="JavaScript">
 window.onload = function() {
     document.getElementById("brand").addEventListener("change", updateBrand);
     document.getElementById("model").addEventListener("change", function() {
@@ -128,6 +128,21 @@ function updateImage(modelName) {
             <tr>
                 <th align="center" colspan="2">Order your motorcycle here!</th>
             </tr>
+            
+        <tr>
+            <td>
+                Name:
+            </td>
+            <td>
+                <label> <input name = "name" type="text" style="width: 70%"> </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Phone number:</td>
+            <td>
+                <label> <input name = "name" type="number" style="width: 70%"> </label>
+            </td>
+        </tr>
             <tr>
                 <td>Brand:</td>
                 <td><select name="brand" id="brand" onchange="update()" onload="update()">
